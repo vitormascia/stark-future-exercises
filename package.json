@@ -1,0 +1,50 @@
+{
+  "name": "sandbox",
+  "version": "0.0.1",
+  "description": "A personal sandbox for running JavaScript using the Node.js runtime, with TypeScript as a typed superset",
+  "author": "Vitor Mascia",
+  "private": true,
+  "type": "module",
+  "main": "./build/exercises.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "boot:ts": "tsx ./exercises.ts",
+    "boot-watch:ts": "tsx watch ./exercises.ts",
+    "boot:js": "node ./build/exercises.js",
+    "build": "npm run install-modules && npm run ts:compile && npm run lint:fix",
+    "build:boot-watch:ts": "npm run api:build && npm run api:boot-watch:ts",
+    "lint": "eslint ./src --ext .js,.ts",
+    "lint:fix": "npm run lint -- --fix && eslint --fix",
+    "ts:compile": "rimraf build && tsc --pretty",
+    "ts:compile-watch": "rimraf build && tsc --watch --pretty",
+    "ts:check": "tsc --noEmit true --pretty",
+    "test": "jest --detectOpenHandles --runInBand --logHeapUsage",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "install-modules": "npm ci",
+    "reinstall-modules": "rimraf node_modules && npm ci"
+  },
+  "dependencies": {
+    "async": "^3.2.6",
+    "axios": "^1.10.0",
+    "bignumber.js": "^9.3.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "@jest/types": "^30.0.1",
+    "@stylistic/eslint-plugin": "^5.1.0",
+    "@types/async": "^3.2.24",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.0.14",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "jest": "^30.0.4",
+    "ts-jest": "^29.4.0",
+    "tsx": "^4.20.3"
+  }
+}
