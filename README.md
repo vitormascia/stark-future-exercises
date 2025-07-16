@@ -141,7 +141,7 @@ So, the format evolves as we run out of digits:
     <th>Letter Bucket Index Range</th>
   </tr>
   <tr>
-    <td rowspan="5">`######`</td>
+    <td rowspan="5"><code>######</code></td>
     <td rowspan="5">000000 - 999999</td>
     <td rowspan="5">0 - 999.999</td>
     <td>∅</td>
