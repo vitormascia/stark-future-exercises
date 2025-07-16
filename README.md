@@ -142,21 +142,21 @@ So, the format evolves as we run out of digits:
   </tr>
   <tr>
     <td rowspan="5"><code>######</code></td>
-    <td rowspan="5">000000 - 999999</td>
-    <td rowspan="5">0 - 999.999</td>
-    <td>∅</td>
-    <td>∅</td>
-    <td>∅</td>
+    <td rowspan="5"><code>000000</code> - <code>999999</code></td>
+    <td rowspan="5"><code>0</code> - <code>999.999</code></td>
+    <td><code>∅</code></td>
+    <td><code>∅</code></td>
+    <td><code>∅</code></td>
   </tr>
   <tr>
-    <td>∅</td>
-    <td>∅</td>
-    <td>∅</td>
+    <td><code>∅</code></td>
+    <td><code>∅</code></td>
+    <td><code>∅</code></td>
   </tr>
   <tr>
-    <td>∅</td>
-    <td>∅</td>
-    <td>∅</td>
+    <td><code>∅</code></td>
+    <td><code>∅</code></td>
+    <td><code>∅</code></td>
   </tr>
   <tr>
     <td>...</td>
@@ -164,9 +164,9 @@ So, the format evolves as we run out of digits:
     <td>...</td>
   </tr>
   <tr>
-    <td>∅</td>
-    <td>∅</td>
-    <td>∅</td>
+    <td><code>∅</code></td>
+    <td><code>∅</code></td>
+    <td><code>∅</code></td>
   </tr>
   <tr>
     <td rowspan="5">#####@</td>
