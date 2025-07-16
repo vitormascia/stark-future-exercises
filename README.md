@@ -169,50 +169,22 @@ So, the format evolves as we run out of digits:
     <td><code>∅</code></td>
   </tr>
   <tr>
-    <td rowspan="5">#####@</td>
-    <td rowspan="5">00000A - 99999Z</td>
-    <td rowspan="5">1.000.000 - 3.599.999</td>
-    <td>A</td>
-    <td>00000A - 99999A</td>
-    <td>0 - 99.999</td>
+    <td rowspan="5"><code>#####@</code></td>
+    <td rowspan="5"><code>00000A</code> - <code>99999Z</code></td>
+    <td rowspan="5"><code>1.000.000</code> - <code>3.599.999</code></td>
+    <td><code>A</code></td>
+    <td><code>00000A</code> - <code>99999A</code></td>
+    <td><code>0</code> - <code>99.999</code></td>
   </tr>
   <tr>
-    <td>B</td>
-    <td>00000B - 99999B</td>
-    <td>100.000 - 199.999</td>
+    <td><code>B</code></td>
+    <td><code>00000B</code> - <code>99999B</code></td>
+    <td><code>100.000</code> - <code>199.999</code></td>
   </tr>
   <tr>
-    <td>C</td>
-    <td>00000C - 99999C</td>
-    <td>200.000 - 299.999</td>
-  </tr>
-  <tr>
-    <td>...</td>
-    <td>...</td>
-    <td>...</td>
-  </tr>
-  <tr>
-    <td>Z</td>
-    <td>00000Z - 99999Z</td>
-    <td>2.500.000 - 2.599.999</td>
-  </tr>
-  <tr>
-    <td rowspan="5">####@@</td>
-    <td rowspan="5">0000AA - 9999ZZ</td>
-    <td rowspan="5">3.600.000 - 10.359.999</td>
-    <td>AA</td>
-    <td>0000AA - 9999AA</td>
-    <td>0 - 9.999</td>
-  </tr>
-  <tr>
-    <td>AB</td>
-    <td>0000AB - 9999AB</td>
-    <td>10.000 - 19.999</td>
-  </tr>
-  <tr>
-    <td>AC</td>
-    <td>0000AC - 9999AC</td>
-    <td>20.000 - 29.999</td>
+    <td><code>C</code></td>
+    <td><code>00000C</code> - <code>99999C</code></td>
+    <td><code>200.000</code> - <code>299.999</code></td>
   </tr>
   <tr>
     <td>...</td>
@@ -220,9 +192,37 @@ So, the format evolves as we run out of digits:
     <td>...</td>
   </tr>
   <tr>
-    <td>ZZ</td>
-    <td>0000ZZ - 9999ZZ</td>
-    <td>6.750.000 - 6.759.999</td>
+    <td><code>Z</code></td>
+    <td><code>00000Z</code> - <code>99999Z</code></td>
+    <td><code>2.500.000</code> - <code>2.599.999</code></td>
+  </tr>
+  <tr>
+    <td rowspan="5"><code>####@@</code></td>
+    <td rowspan="5"><code>0000AA</code> - <code>9999ZZ</code></td>
+    <td rowspan="5"><code>3.600.000</code> - <code>10.359.999</code></td>
+    <td><code>AA</code></td>
+    <td><code>0000AA</code> - <code>9999AA</code></td>
+    <td><code>0</code> - <code>9.999</code></td>
+  </tr>
+  <tr>
+    <td><code>AB</code></td>
+    <td><code>0000AB</code> - <code>9999AB</code></td>
+    <td><code>10.000</code> - <code>19.999</code></td>
+  </tr>
+  <tr>
+    <td><code>AC</code></td>
+    <td><code>0000AC</code> - <code>9999AC</code></td>
+    <td><code>20.000</code> - <code>29.999</code></td>
+  </tr>
+  <tr>
+    <td>...</td>
+    <td>...</td>
+    <td>...</td>
+  </tr>
+  <tr>
+    <td><code>ZZ</code></td>
+    <td><code>0000ZZ</code> - <code>9999ZZ</code></td>
+    <td><code>6.750.000</code> - <code>6.759.999</code></td>
   </tr>
   <tr>
     <td rowspan="5">###@@@</td>
