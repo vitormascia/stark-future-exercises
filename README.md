@@ -374,3 +374,21 @@ The plates are ordered lexicographically, meaning:
 ## Exercise 2 - JavaScript Concurrency
 
 Given an array of URLs and a `MAX_CONCURRENCY` integer, implement a function that will asynchronously fetch each URL, not requesting more than `MAX_CONCURRENCY` URLs at the same time. The URLs should be fetched as soon as possible. The function should return an array of responses for each URL
+
+### 1.1 Simple image data fetcher
+
+This exercise demonstrates how to fetch multiple image URLs concurrently, while limiting the number of simultaneous HTTP requests. It retrieves image metadata, such as buffer size and dimensions, for each URL. The function returns an array where each element corresponds to either the image metadata or an error, preserving the order of the input URLs
+
+### 1.2 Why a Queue?
+
+A queue is used to control concurrency effectively. By using a queue with a fixed number of workers (MAX_QUEUE_CONCURRENCY), we ensure that no more than the allowed number of requests run at the same time. This avoids overwhelming the network or the remote servers and helps manage resource usage efficiently. Additionally, the queue preserves task order, enabling the results array to map back to the original input order
+
+### 1.3 Time Complexity (Big O Notation)
+
+- Each URL is fetched exactly once, and the overhead of managing the queue and callbacks scales linearly with the number of URLs. The concurrency controls do not increase the asymptotic time complexity but do impact actual runtime performance by limiting simultaneous requests
+- Answer: `O(n)` — where `n` is the number of URLs
+
+### 1.4 Space Complexity (Big O Notation)
+
+- The space complexity is linear because the function stores a results array with one slot per URL, and each slot holds either the image metadata or an error object. Additional memory is used transiently for each HTTP response buffer and image dimension data but does not exceed O(n) overall
+- Answer: `O(n)` — where `n` is the number of URLs
