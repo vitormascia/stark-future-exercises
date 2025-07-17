@@ -399,7 +399,7 @@ A queue is used to control concurrency effectively. By using a queue with a fixe
 
 ### 1.3 Time Complexity (Big O Notation)
 
-- Each URL is fetched exactly once, and the overhead of managing the queue and callbacks scales linearly with the number of URLs. The concurrency controls do not increase the asymptotic time complexity but do impact actual runtime performance by limiting simultaneous requests
+- Each URL is fetched exactly once, and the overhead of managing the queue and callbacks scales linearly with the number of URLs. The concurrency controls do not increase the time complexity but do impact actual runtime performance by limiting simultaneous requests
 - Answer: `O(n)` — where `n` is the number of URLs
 
 ### 1.4 Space Complexity (Big O Notation)
