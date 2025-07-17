@@ -364,8 +364,7 @@ How do we find the `nth` License Plate?
 Why does this work? Because the license plate sequence is organized as blocks:
 
 - Each letter suffix group contains all numeric combinations (e.g., from `000000` to `999999`)
-- The total license plates = (number of letter groups) × (number of numeric combos)
-- Dividing the overall index by the numeric block size tells us which letter group we are in
+- Dividing the overall index (License Plate index you’re looking for) by the numeric block size tells us which letter group we are in
 - The remainder after that division gives the position inside that numeric block
 
 This is essentially how numbering systems work when you have a base (like digits and letters combined): you break the number into "digits" of different bases by repeated division and modulo
