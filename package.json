@@ -13,7 +13,7 @@
     "boot:js": "node ./build/exercises.js",
     "build": "npm run install-modules && npm run ts:compile && npm run lint:fix",
     "build:boot-watch:ts": "npm run api:build && npm run api:boot-watch:ts",
-    "lint": "eslint ./src --ext .js,.ts",
+    "lint": "eslint . --ext .js,.ts",
     "lint:fix": "npm run lint -- --fix && eslint --fix",
     "ts:compile": "rimraf build && tsc --pretty",
     "ts:compile-watch": "rimraf build && tsc --watch --pretty",
