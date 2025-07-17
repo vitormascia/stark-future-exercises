@@ -22,7 +22,6 @@ export type FetchWithConcurrencyResults = Array<ImageMetadata | Error>
 export const MAX_QUEUE_CONCURRENCY = 10;
 
 const createQueue = (results: FetchWithConcurrencyResults): QueueObject<FetchUrlJob> => {
-
 	const worker: AsyncWorker<FetchUrlJob> =
 		(job: FetchUrlJob, callback: (error?: Error) => void): void => {
 			/**
