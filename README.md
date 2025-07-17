@@ -404,5 +404,5 @@ A queue is used to control concurrency effectively. By using a queue with a fixe
 
 ### 1.4 Space Complexity (Big O Notation)
 
-- The space complexity is linear because the function stores a results array with one slot per URL, and each slot holds either the image metadata or an error object. Additional memory is used transiently for each HTTP response buffer and image dimension data but does not exceed O(n) overall
+- The space complexity is linear because the function stores a results array with one slot per URL, and each slot holds either the image metadata or an error object. Additional memory is used transiently for each HTTP response buffer and image dimension data but does not exceed `O(n)` overall
 - Answer: `O(n)` — where `n` is the number of URLs
