@@ -358,7 +358,7 @@ How do we find the `nth` License Plate?
   - Numeric part `index` = `licensePlateIndex` % `numeric combinations`. The modulo operation (%) gives the remainder when dividing the index by the number of numeric combinations. This remainder tells us where within the current letter group the License Plate falls — that is, which exact numeric sequence (like `000123`) it corresponds to
   - Letter group `index` = `licensePlateIndex` ÷ `numeric combinations`. Integer division tells us how many full blocks of numeric combinations fit into the index. Each block corresponds to a different letter suffix (like `A`, `B`, ..., `AA`, `AB`, etc.). So this quotient tells us which letter suffix group the license plate belongs to
 - Convert these indexes to strings:
-  - Numeric part: zero-padded number of length `6 - L`
+  - Numeric part: zero-padded number of length `6` - `L`
   - Letter part: `base-26` representation of the letter group index, mapped to letters `A-Z`
 
 Why does this work? Because the license plate sequence is organized as blocks:
