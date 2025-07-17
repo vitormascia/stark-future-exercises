@@ -28,6 +28,11 @@ function buildLicensePlateLetterChunk(
 	let letterChunk = EMPTY_STRING;
 	let letterChunkRemainder = letterChunkSize;
 
+	/*
+		Convert a number (@letterChunkRemainder) into a base-26 representation using the
+		letters A-Z as "digits". This is very similar to how numbers are converted into
+		decimal or hexadecimal, but here the base is 26, and the “digits” are letters
+	*/
 	for (let i = 0; i < letterSuffixLength; i++) {
 		const letterIndex = letterChunkRemainder
 			.mod(LETTERS.length)

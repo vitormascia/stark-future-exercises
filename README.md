@@ -340,21 +340,35 @@ So, the format evolves as we run out of digits:
 
 ### 1.4 Core Logic
 
-Consider a license plate format of length `6` consisting of digits (`0-9`) and letters (`A-Z`). For any given suffix length of letters:
+How do we find the `nth` License Plate?
 
-- The number of numeric combinations = `10^number of digit positions`
-- Each unique letter combination corresponds to a block of numeric combinations
+- Split the plate into 2 parts:
+  - Numeric part: the digits (`0-9`) at the start
+  - Letter part: the letters (`A-Z`) at the end
+- For a given letter suffix length `L`:
+  - The number of digits = `6` - `L` (because total length is always `6`)
+  - Numeric combinations = `10^(6 - L)` (all possible numbers of that length)
+  - Letter combinations = `26^L` (all letter sequences of length `L`, since `26` letters)
+- Total combinations for that letter suffix length:
+  - *total = numeric combinations × letter combinations*
+- Check if the target `licensePlateIndex` fits in these combinations:
+  - If `licensePlateIndex < total`, the plate's letter suffix length is `L`
+  - Else, subtract total from `licensePlateIndex` and try the next `L+1`
+- Calculate numeric and letter parts:
+  - Numeric part `index` = `licensePlateIndex` % `numeric combinations`. The modulo operation (%) gives the remainder when dividing the index by the number of numeric combinations. This remainder tells us where within the current letter group the License Plate falls — that is, which exact numeric sequence (like `000123`) it corresponds to
+  - Letter group `index` = `licensePlateIndex` ÷ `numeric combinations`. Integer division tells us how many full blocks of numeric combinations fit into the index. Each block corresponds to a different letter suffix (like `A`, `B`, ..., `AA`, `AB`, etc.). So this quotient tells us which letter suffix group the license plate belongs to
+- Convert these indexes to strings:
+  - Numeric part: zero-padded number of length `6 - L`
+  - Letter part: `base-26` representation of the letter group index, mapped to letters `A-Z`
 
-So:
+Why does this work? Because the license plate sequence is organized as blocks:
 
-- `licensePlateIndex` ÷ `numericCombinations` gives the letter group index (which letter suffix)
-- `licensePlateIndex` % `numericCombinations` gives the numeric part within that letter group
+- Each letter suffix group contains all numeric combinations (e.g., from 000000 to 999999).
+- The total license plates = (number of letter groups) × (number of numeric combos).
+- Dividing the overall index by the numeric block size tells us which letter group we are in.
+- The remainder after that division gives the position inside that numeric block.
 
-The plates are ordered lexicographically, meaning:
-
-- All numeric variations of `00000A` come first
-- Then all numeric variations of `00000B`
-- And so on...
+This is essentially how numbering systems work when you have a base (like digits and letters combined): you break the number into "digits" of different bases by repeated division and modulo
 
 ### 1.5 Time Complexity (Big O Notation)
 
