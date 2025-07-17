@@ -350,7 +350,7 @@ How do we find the `nth` License Plate?
   - Numeric combinations = `10^(6 - L)` (all possible numbers of that length)
   - Letter combinations = `26^L` (all letter sequences of length `L`, since `26` letters)
 - Total combinations for that letter suffix length:
-  - *total = numeric combinations × letter combinations*
+  - `total` = `numeric combinations` × `letter combinations`
 - Check if the target `licensePlateIndex` fits in these combinations:
   - If `licensePlateIndex < total`, the plate's letter suffix length is `L`
   - Else, subtract total from `licensePlateIndex` and try the next `L+1`
@@ -363,10 +363,10 @@ How do we find the `nth` License Plate?
 
 Why does this work? Because the license plate sequence is organized as blocks:
 
-- Each letter suffix group contains all numeric combinations (e.g., from 000000 to 999999).
-- The total license plates = (number of letter groups) × (number of numeric combos).
-- Dividing the overall index by the numeric block size tells us which letter group we are in.
-- The remainder after that division gives the position inside that numeric block.
+- Each letter suffix group contains all numeric combinations (e.g., from `000000` to `999999`)
+- The total license plates = (number of letter groups) × (number of numeric combos)
+- Dividing the overall index by the numeric block size tells us which letter group we are in
+- The remainder after that division gives the position inside that numeric block
 
 This is essentially how numbering systems work when you have a base (like digits and letters combined): you break the number into "digits" of different bases by repeated division and modulo
 
@@ -404,5 +404,5 @@ A queue is used to control concurrency effectively. By using a queue with a fixe
 
 ### 1.4 Space Complexity (Big O Notation)
 
-- The space complexity is linear because the function stores a results array with one slot per URL, and each slot holds either the image metadata or an error object. Additional memory is used transiently for each HTTP response buffer and image dimension data but does not exceed `O(n)` overall
+- The space complexity is linear because the function stores a results array with one slot per URL, and each slot holds either the image metadata or an error object. Additional memory is used for each HTTP response buffer and image dimension data but does not exceed `O(n)` overall
 - Answer: `O(n)` — where `n` is the number of URLs
