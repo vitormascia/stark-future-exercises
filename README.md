@@ -395,7 +395,7 @@ This exercise demonstrates how to fetch multiple image URLs concurrently, while 
 
 ### 1.2 Why a Queue?
 
-A queue is used to control concurrency effectively. By using a queue with a fixed number of workers (MAX_QUEUE_CONCURRENCY), we ensure that no more than the allowed number of requests run at the same time. This avoids overwhelming the network or the remote servers and helps manage resource usage efficiently. Additionally, the queue preserves task order, enabling the results array to map back to the original input order
+A queue is used to control concurrency effectively. By using a queue with a fixed number of workers (`MAX_QUEUE_CONCURRENCY`), we ensure that no more than the allowed number of requests run at the same time. This avoids overwhelming the network or the remote servers and helps manage resource usage efficiently. Additionally, the queue preserves task order, enabling the results array to map back to the original input order
 
 ### 1.3 Time Complexity (Big O Notation)
 
