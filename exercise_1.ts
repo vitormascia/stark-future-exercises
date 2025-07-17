@@ -165,5 +165,5 @@ export function getNthLicensePlate(licensePlateIndex: number): string {
 		isError,
 	);
 
-	throw new Error("License Plate index out of range (must be < 501.363.136)");
+	throw new Error("License Plate Index out of range (must be < 501.363.136)");
 }

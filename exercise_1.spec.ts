@@ -1,6 +1,8 @@
+import { faker } from "@faker-js/faker";
+
 import { getNthLicensePlate } from "./exercise_1.ts";
 
-describe("Stark Future Exercises Tests", () => {
+describe("Stark Future Exercise 1 (License Plates) Tests", () => {
 	it.each([
 		[0, "000000"],
 		[999_999, "999999"],
@@ -52,6 +54,22 @@ describe("Stark Future Exercises Tests", () => {
 		"Given License Plate Index %j, License Plate is %j",
 		(licensePlateIndex, licensePlate) => {
 			expect(getNthLicensePlate(licensePlateIndex)).toStrictEqual(licensePlate);
-		}
+		},
+	);
+
+	const LICENSE_PLATES_MIN_INDEX_OUT_OF_RANGE = 501_363_136;
+	const licensePlateIndexesOutOfRange: Array<number> = Array.from(
+		{ length: 20 },
+		(): number => faker.number.int({
+			min: LICENSE_PLATES_MIN_INDEX_OUT_OF_RANGE,
+		}),
+	);
+
+	it.each(licensePlateIndexesOutOfRange.map((licensePlateIndexOutOfRange) => [licensePlateIndexOutOfRange]))(
+		"Given License Plate Index %j, should throw error indicating License Plate Index out of range",
+		(licensePlateIndex) => {
+			expect(() => getNthLicensePlate(licensePlateIndex)).toThrow(Error);
+			expect(() => getNthLicensePlate(licensePlateIndex)).toThrow("License Plate Index out of range (must be < 501.363.136)");
+		},
 	);
 });

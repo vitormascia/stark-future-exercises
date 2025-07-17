@@ -28,6 +28,7 @@
     "async": "^3.2.6",
     "axios": "^1.10.0",
     "bignumber.js": "^9.3.0",
+    "image-size": "^2.0.2",
     "rimraf": "^6.0.1",
     "typescript": "^5.8.3"
   },
@@ -43,6 +44,7 @@
     "eslint": "^9.31.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
+    "http-status-codes": "^2.3.0",
     "jest": "^30.0.4",
     "ts-jest": "^29.4.0",
     "tsx": "^4.20.3"
